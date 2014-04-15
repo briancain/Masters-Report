@@ -2,6 +2,10 @@
 
 A masters report on the ANCOR/MTD project.
 
+## Downloading the Report
+
+If you wish to read the report, please visit the _releases_ section of this repository and download the latest compiled PDF.
+
 ## Project
 
 This report is based off the project that can be found [here](https://github.com/arguslab/ancor-dashboard).

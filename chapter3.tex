@@ -18,7 +18,7 @@ Following figure \ref{fullArchitecture}, we can see that we have \ancor{} as a b
 
 Within the dashed rectangle with rounded edges, I have represented \projectName{}. It follows the Model-View-Controller architecture that most web applications conform to. The controller is where all of the methods and HTTP REST functions are located. It is also the component in charge of defining the models. After a successful HTTP call from \ancor{}, the controller will save the relevant data into the model. On the view, if any of the model variables are needed, they can be accessed and displayed to the user. Also, if there are any functions that need to be called from the controller, the view contains buttons to invoke these functions.
 
-Finally on the very right of figure \ref{fullArchitecture}, we have the user browser. This is where the user interacts with \projectName{}. Normally the user will retrieve the compiled template view that is ready to be displayed in the browser. However if the user wishes to add a new instance, delete an instance, deploy a new ARML file, etc, then they will invoke that action through the view that will then call a method within the controller.
+Finally on the very right of figure \ref{fullArchitecture}, we have the user browser. This is where the user interacts with \projectName{}. Normally the user will retrieve the compiled template view that is ready to be displayed in the browser. However if the user wishes to add a new instance, delete an instance, deploy a new configuration file, etc, then they will invoke that action through the view that will then call a method within the controller.
 
 \begin{figure}[htb]%t=top, b=bottom, h=here
 
@@ -249,9 +249,9 @@ The Tasks view is what is in charge of displaying all current \ancor{} Tasks. Wh
 
 \subsection{Deploy}
 
-The Deploy view is where the user can write their own configruation file and deploy it directly to \ancor{}. When the Deploy route is loaded, it will query \ancor{} for its version and the current deployed environment. The environment is required just so the user can know if any environments are currently deployed to prevent any overlap.
+The Deploy view is where the user can write their own configuration file and deploy it directly to \ancor{}. When the Deploy route is loaded, it will query \ancor{} for its version and the current deployed environment. The environment is required just so the user can know if any environments are currently deployed to prevent any overlap.
 
-roleTemplate and goalTemplate are what generates the template text for the configuration within the ACE Editor. It simply uses an already made string template and inserts it where the curser is at within ACE.
+roleTemplate and goalTemplate are what generates the template text for the configuration within the ACE Editor. It simply uses an already made string template and inserts it where the cursor is at within ACE.
 
 There are two functions that relate directly to the ACE editor API. The first one is loadConf, which is in charge of initializing the editor. The next one is called confChange. This function is in charge of keeping the configuration data model up to date within Deploys model.
 

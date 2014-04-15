@@ -1,0 +1,38 @@
+% +--------------------------------------------------------------------+
+% | Chapter 4
+% +--------------------------------------------------------------------+
+
+\cleardoublepage
+
+\chapter{Evaulation of Dashboard}
+\label{makereference4}
+
+\section{\projectName{} Evaluation}
+\label{makereference4.1}
+
+With the implementation of \projectName{} complete, there needed to be some testing to ensure that the dashboard was easy to use and as helpful as the \ancorcli{}.
+
+\subsection{Speed}
+
+\projectName{} is very fast and responsive in most modern web browsers. Because of the Bootstrap framework, it can work in the majority of what users will choose as their favorite browser. Since AngularJS compiles all of its HTML, CSS, and JavaScript down to a minified version, loading up the dashboard will be extremely fast when deployed. Because of how AngularJS is deployed, it will also be faster to respond compared to other popular MVC frameworks like Ruby on Rails or .NET as explained in section \ref{makereference3.2}, Prototyping.
+
+\subsection{Usability of \projectName{} vs \ancorcli{}}
+
+This project originally set out to cover all of the use-cases (section \ref{makereference2.4}) defined by the developers of \ancorcli{}. Because of this, \projectName{} is able to do everything that the \ancorcli{} can do. Since \projectName{} is a web application, it has an easier time displaying relevant information to the user compared to the \ancorcli{}. In \ancorcli{}'s case, the best it can do is display the json data in formatted tables within a terminal. This is just the nature and limitation of console applications compared to web application frameworks with rich visuals and point-and-click functionality.
+
+\subsection{Using \projectName{} to Control \ancor{}}
+
+Finally, \projectName{} should be able to control \ancor{} in such a way that it takes complete advantage of the REST API it has provided to interact with. With the addition of the powerful ACE Editor, AngularJS components like HTML templating to display relevant data, filtering to search through large data sets, dynamically generated network graphs, and other usability operations against \ancor{}, a user is able to do whatever they could need to accomplish with \projectName{}.
+
+\section{Future Work}
+\label{makereference4.2}
+
+In this section, I will briefly go over some future work that could be done to the dashboard that would improve the user experience.
+
+Eventually \ancor{} is planning on creating authentication for their REST API. When this happens, it will be important for \projectName{} to also have a way to authenticate users.
+
+At the moment, if communication goes wrong with \ancor{}, there is not an intuitive way to let the user know. Errors will be displayed within the JavaScript console of a browser, however the average user will not think to look there if something unusual happens. It would be nice to give more feedback to the user when RESTful operation errors occur.
+
+The instance network graph can also be improved to make it more helpful to the user. One improvement that could help is making the node links toggle between hidden and visible. Currently, there is no logic within the D3js script that keeps track of each nodes links once they are drawn. They all belong the the same CSS class. An improvement might be to separate each nodes links into different CSS classes, and then when a user clicks on a node toggle the CSS of its links between hidden and visible. This might make analyzing the network graph a little easier.
+
+A usability improvement could be made to the tables in the Main and Tasks view. Adding a sortable toggle between each column attribute would improve how a user might go about looking at the data from \ancor{}.

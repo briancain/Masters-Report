@@ -1,0 +1,419 @@
+% +-------------------------------------------------------------------------+
+% | References
+% |
+% | This template uses BibTeX, which is the bibliography formatting and
+% | collating system for all versions of LaTeX.  In this file, here's what
+% | you can do:
+% |
+% | - Use the @STRING command to define abbreviations.
+% |
+% | - Group citations by subject area.  This will make it easier to organize
+% |   your references.
+% |
+% | - Include the bibliographic data for each reference (author, title, journal,
+% |   date, etc).
+% |
+% | Much of the information presented here is taken from these sources:
+% |
+% |   The BibTeX Bibliography Database
+% |   Urs-Jakob Rüetschi
+% |   http://www.geo.unizh.ch/~uruetsch/varia/bibtex.html
+% |
+% |   BibTeXing
+% |   Oren Patashnik
+% |   http://amath.colorado.edu/documentation/LaTeX/reference/faq/bibtex.pdf
+% |
+% +-------------------------------------------------------------------------+
+
+% +-------------------------------------------------------------------------+
+% | About BibTeK
+% |
+% | In the template file (etdrtemplate.tex) we used the command \bibliography
+% | to specify the name of the BibTeX database file (this file, references.bib).
+% | It's in this file that the actual bibliographic data are stored (author,
+% | title, journal, date, etc.)
+% |
+% | References to items in the bibliography are made with the \cite command.
+% | Examples of this command are shown in the file chapter1.tex
+% |
+% | As LaTeX processes files, it creates an auxiliary file (etdrtemplate.aux)
+% | that lists all references, i.e, any place where the \cite command was
+% | used, and the bibliograhy style (specificed in the \bibliographystyle
+% | command).  The BibTeX program reads this auxiliary file and creates
+% | a .bbl file which contains the LaTeX source code for items in the
+% | bibliography.
+% |
+% | To process a document with a bibliography, follow this sequence:
+% | -Run LaTeX to write the .aux file
+% | -Run BibTeK to create the .bbl file
+% | -Run LaTeX twice to resolve references and include the bibliography
+% |
+% +-------------------------------------------------------------------------+
+
+
+% +-------------------------------------------------------------------------+
+% |
+% | The @STRING command is used to define abbreviations.  This is especially
+% | useful in defining an abbreviation to represent journal titles (or
+% | abbreviations).  In the first example below, "ARPC" is defined to represent
+% | "Annu. Rev. Phy. Chem." (the standard abbreviation for the journal "Annual
+% | Review of Physics and Chemistry.")  Any reference in your text to ARPC will
+% | be replaced by the full string, Annu. Rev. Phy. Chem.  Abbreviations are not
+% | case sensitive, i.e, "arpc" and "ARPC" are treated as the same
+% |
+% +-------------------------------------------------------------------------+
+
+@STRING(  ARPC = "Annu. Rev. Phys. Chem.")
+@STRING(   JCP = "J.~Chem. Phys.")
+@STRING( JOSAB = "J.~Opt. Soc. Am.~B")
+@STRING(   PRL = "Phys. Rev. Lett.")
+@STRING(   RMP = "Rev. Mod. Phys.")
+
+
+% +-------------------------------------------------------------------------+
+% | Formatting Citations
+% |
+% | Here are examples of how to format data for items in your bibliography
+% |
+% | BibTeX database files (extension .bib) are plain text files. They consist of
+% | entries of various kinds. Each entry describes a book, an article, a
+% | manual, etc. Example:
+% |
+% |   @BOOK{GEN:Bransden:2003,
+% |
+% |        AUTHOR = "B.~H.~Bransden and C.~J.~Joachain",
+% |         TITLE = "Physics of Atoms and Molecules",
+% |     PUBLISHER = "New York: Prentice-Hall",
+% |        VOLUME = "2nd Ed.",
+% |          YEAR = 2003
+% |
+% | The "@BOOK" states that this is an entry of type book. Various entry types are
+% | described below.
+% |
+% | The "GEN:Bransden:2003" is the key, as it appears in the argument of
+% | a \cite command referring to the entry.  You can use the first element
+% | in the key, e.g., "GEN" to group together items on the same general
+% | topic (see examples below).
+% |
+% | This entry has four fields, named AUTHOR, TITLE, PUBLISHER, and ADDRESS.
+% | The meanings of these and other fields are described below. A field consists
+% | of the name, followed by an "=" character with optional space around it,
+% | followed by its text. The text of a field is a string of characters, with
+% | no unmatched braces, surrounded by either a pair of braces or a pair
+% | of " characters. Entry fields are separated from one another, and from
+% | the key, by commas. A comma may have optional space around it.
+% |
+% | BibTeX ignores the case of letters in the entry type, key, and field names.
+% |
+% | The quotes or braces can be omitted around text consisting entirely of
+% | numerals: Volume = "27" is equivalent to Volume = 27.
+% +-------------------------------------------------------------------------+
+
+% +-------------------------------------------------------------------------+
+% | Standard entry types
+% |
+% | Entries of different types have different fields. For each entry type,
+% | the fields are divided into three classes:
+% |     required
+% |     optional
+% |     ignored
+% |
+% | BibTeK ignores any fields that are not required or optional, so you
+% | can add fields for any additional information you'd like to retain
+% | about the reference, such as a file name, abstract, notes, etc.  The
+% | information will not appear in the formatted bibliography, but it will
+% | be retained in your references.bib file.
+% |
+% | Listed here are the standard reference types used by BibTeK:
+% |
+% |
+% | article
+% |     An article from a journal or magazine.
+% |     Required fields (Rf): author, title, journal, year.
+% |     Optional fields (Of): volume, number, pages, month, note.
+% |
+% | book
+% |     A book with an explicit publisher.
+% |     Rf: author or editor, title, publisher, year.
+% |     Of: volume or number, series, address, edition, month, note.
+% |
+% | booklet
+% |     A work that is printed and bound, but without a named publisher or sponsoring institution.
+% |     Rf: title.
+% |     Of: author, howpublished, address, month, year, note.
+% |
+% | inbook
+% |     A part of a book, which may be a chapter (or section or whatever) and/or a range of pages.
+% |     Rf: author or editor, title, chapter and/or pages, publisher, year.
+% |     Of: volume or number, series, type, address, edition, month, note.
+% |
+% | incollection
+% |     A part of a book having its own title.
+% |     Rf: author, title, booktitle, publisher, year.
+% |     Of: editor, volume or number, series, type, chapter, pages, address, edition, month, note.
+% |
+% | inproceedings
+% |     An article in a conference proceedings.
+% |     Rf: author, title, booktitle, year.
+% |     Of: editor, volume or number, series, pages, address, month, organization, publisher, note.
+% |
+% | manual
+% |     Technical documentation.
+% |     Rf: title.
+% |     Of: author, organization, address, edition, month, year, note.
+% |
+% | mastersthesis
+% |     A Master's thesis.
+% |     Rf: author, title, school, year.
+% |     Of: type, address, month, note.
+% |
+% | misc
+% |     Use this type when nothing else fits.
+% |     Rf: none.
+% |     Of: author, title, howpublished, month, year, note.
+% |
+% | phdthesis
+% |     A PhD thesis.
+% |     Rf: author, title, school, year.
+% |     Of: type, address, month, note.
+% |
+% | proceedings
+% |     The proceedings of a conference.
+% |     Rf: title, year.
+% |     Of: editor, volume or number, series, address, month, organization, publisher, note.
+% |
+% | techreport
+% |     A report published by a school or other institution, usually numbered within a series.
+% |     Rf: author, title, institution, year.
+% |     Of: type, number, address, month, note.
+% |
+% | unpublished
+% |     A document having an author and title, but not formally published.
+% |     Rf: author, title, note.
+% |     Of: month, year.
+% +-------------------------------------------------------------------------+
+
+% +-------------------------------------------------------------------------+
+% | Sample References
+% |
+% | Listed below are more references to use as examples.  Notice how references
+% | on similar topics are grouped together by the first element in the key (GEN,
+% | ARP, CT, DMatrix, Note).
+% +-------------------------------------------------------------------------+
+
+% +-------------------------------------------------------------------------+
+% | Subject Area 1: Key=GEN                                                 |
+% +-------------------------------------------------------------------------+
+
+@BOOK{GEN:Few:2006,
+
+       AUTHOR = "S.~Few",
+        TITLE = "Information Dashboard Design",
+    PUBLISHER = "O'Reilly Media, Inc.",
+       VOLUME = "1st Edition",
+         YEAR = 2006
+}
+
+@BOOK{GEN:Bransden:2003,
+
+       AUTHOR = "B.~H.~Bransden and C.~J.~Joachain",
+        TITLE = "Physics of Atoms and Molecules",
+    PUBLISHER = "New York: Prentice-Hall",
+       VOLUME = "2nd Ed.",
+         YEAR = 2003
+}
+
+
+% +-------------------------------------------------------------------------+
+% | Subject Area 2  Key=ARP                                                                     |
+% +-------------------------------------------------------------------------+
+
+@ARTICLE{
+ARP:Loy:1974,
+
+       AUTHOR = {M.~M.~T.~Loy},
+        TITLE = {Observation of Population Inversion by Optical Adiabatic Rapid Passage},
+      JOURNAL = PRL,
+       VOLUME = {32},
+        PAGES = {814-817},
+         YEAR = {1974}
+}
+
+@ARTICLE{
+ARP:Melinger:1991,
+
+       AUTHOR = {J.~S.~Melinger and A.~Hariharan and S.~R.~Gandhi and W.~S.~Warren},
+        TITLE = {Adiabatic population inversion in $I_{2}$ vapor with picosecond laser pulses},
+      JOURNAL = JCP,
+       VOLUME = {95},
+        PAGES = {2210-2213},
+         YEAR = {1991}
+}
+
+% +-------------------------------------------------------------------------+
+% | Subject Area 3  Key=CT                                                                    |
+% +-------------------------------------------------------------------------+
+
+@ARTICLE{
+CT:Phillips:1985,
+
+       AUTHOR = {W.~D.~Phillips and J.~V.~Prodan and H.~J.~Metcalf},
+        TITLE = {Laser cooling and electromagnetic trapping of neutral atoms},
+      JOURNAL = JOSAB,
+       VOLUME = {2},
+        PAGES = {1751-1767},
+         YEAR = {1985}
+}
+
+@ARTICLE{
+CT:Weiner:1999,
+
+       AUTHOR = {J.~Weiner and V.~S.~Bagnato and S.~Zilio and P.~S.~Julienne},
+        TITLE = {Experiments and theory in cold and ultracold collisions},
+      JOURNAL = RMP,
+       VOLUME = {71},
+        PAGES = {1-85},
+         YEAR = {1999}
+}
+
+@ARTICLE{
+CT:Gould:1988,
+
+       AUTHOR = {P.~L.~Gould and P.~D.~Lett and P.~S.~Julienne and W.~D.~Phillips},
+        TITLE = {Observation of Associative Ionization of Ultracold Laser-Trapped Sodium Atoms},
+      JOURNAL = PRL,
+       VOLUME = {60},
+        PAGES = {788-791},
+         YEAR = {1988}
+}
+
+% +-------------------------------------------------------------------------+
+% | Subject Area 4  Key=DMatrix                                             |
+% +-------------------------------------------------------------------------+
+
+@MISC{
+DMatrix:Unruh:2014,
+
+       AUTHOR = {I.~Unruh and A.~G.~Bardas and R.~Zhuang and X.~Ou and S.~A.~DeLoach},
+        TITLE = {Compiling Abstract Specifications into Concrete Systems ¿ Bringing Order to the Cloud},
+ HOWPUBLISHED = {Kansas State University, Manhattan, KS},
+         YEAR = {2014},
+         NOTE =  {(Unpublished)}
+}
+
+@MISC{
+DMatrix:Fielding:2000,
+
+       AUTHOR = {R.~T.~Fielding},
+        TITLE = {Architectural Styles and the Design of Network-based Software Architectures},
+ HOWPUBLISHED = {University Of California, Irvine},
+         YEAR = {2000},
+         NOTE =  {(Dissertation)}
+}
+
+@MISC{
+DMatrix:DePaola:2003,
+
+       AUTHOR = {B.~D.~DePaola},
+        TITLE = {Lectures on Coherent Excitation},
+ HOWPUBLISHED = {Kansas State University, Manhattan, KS},
+         YEAR = {2003},
+         NOTE =  {(Unpublished)}
+}
+
+@MISC{
+DMatrix:Weaver:2005,
+
+       AUTHOR = {O.~L.~Weaver},
+ HOWPUBLISHED = {Kansas State University, Manhattan, KS},
+         YEAR = {2005},
+         NOTE =  {(Private Communication)}
+}
+
+@PHDTHESIS{
+DMatrix:Nguyen:2003,
+
+       AUTHOR = {H.~Nguyen},
+        TITLE = {MOTRIMS},
+       SCHOOL = {Kansas State University},
+         YEAR = {2003}
+}
+
+
+% +--------------------------------------------------------------------+
+% | Notes appear as numbered items in the bibliography, just like
+% | any other reference.
+% +--------------------------------------------------------------------+
+
+@MISC{
+Note:Yeoman:2014,
+  title = {Yeoman - Modern workflows for modern webapps},
+  month = mar,
+  year = {2014},
+  url = {http://yeoman.io/index.html}
+}
+
+@MISC{
+Note:Bower:2014,
+  title = {Bower - A package manager for the web},
+  month = mar,
+  year = {2014},
+  url = {http://bower.io/}
+}
+
+@MISC{
+Note:Grunt:2014,
+  title = {Grunt: The JavaScript Task Runner},
+  month = mar,
+  year = {2014},
+  url = {http://gruntjs.com/}
+}
+
+@MISC{
+Note:AngularJS:2014,
+  title = {AngularJS - Superheroic JavaScript MVW Framework},
+  month = mar,
+  year = {2014},
+  url = {http://www.angularjs.org/}
+}
+
+@MISC{
+Note:ACE:2014,
+  title = {Ace - The High Performance Code Editor for the Web},
+  month = mar,
+  year = {2014},
+  url = {http://ace.c9.io/}
+}
+
+@MISC{
+Note:D3JS:2014,
+  title = {D3.js - Data Driven Documents},
+  month = mar,
+  year = {2014},
+  url = {http://d3js.org/}
+}
+
+@MISC{
+Note:Bootstrap:2014,
+  title = {Bootstrap},
+  month = mar,
+  year = {2014},
+  url = {http://getbootstrap.com/}
+}
+
+@MISC{
+Note:ArgusLab:2014,
+  title = {Argus Lab Moving-target Defense},
+  month = apr,
+  year = {2014},
+  url = {http://www.arguslab.org/mtd.html}
+}
+
+@MISC{
+Note:GithubStars:2014,
+  title = {Top starred projects on Github},
+  month = apr,
+  year = {2014},
+  url = {https://github.com/search?q=stars%3A%3E1000&ref=cmdform}
+}
+

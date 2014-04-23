@@ -6,7 +6,7 @@
 # pdflatex and bibtex. Just
 # run this script.
 
-REPORT_NAME=briancain-report
+REPORT_NAME=BrianCain2014
 
 REPORT_TEX="$REPORT_NAME.tex"
 REPORT_BIB="$REPORT_NAME.aux"
